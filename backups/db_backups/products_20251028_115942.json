@@ -1,0 +1,13 @@
+[
+  {
+    "id": 3,
+    "name": "Serum",
+    "price": 3500.0,
+    "category": "Soins Visage",
+    "rating": 5,
+    "badge": "Bio",
+    "description": "",
+    "image_path": "images\\product_1761641568.jpeg",
+    "icon": "🎁"
+  }
+]

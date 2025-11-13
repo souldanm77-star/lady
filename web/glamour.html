@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Lady Glam - Votre boutique mode et beauté. Vêtements femmes, accessoires, soins visage et corps, parfums et bien plus.">
+    <meta name="keywords" content="mode femme, robes, accessoires, sacs, soins beauté, parfums, Lady Glam">
+    <title>Lady Glam - Mode, Beauté & Accessoires</title>
+
+    <style>
+        /* ===== RESET & VARIABLES CSS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #9C27B0;
+            --secondary-color: #F3E5F5;
+            --accent-color: #7B1FA2;
+            --dark-color: #2c2c2c;
+            --light-color: #ffffff;
+            --text-color: #4a4a4a;
+            --border-color: #e0e0e0;
+            --success-color: #6fbf73;
+            --shadow: 0 2px 15px rgba(156, 39, 176, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fafafa;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: var(--light-color);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 8px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .slide-1 {
+            background: linear-gradient(rgba(156, 39, 176, 0.7), rgba(123, 31, 162, 0.7)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23F3E5F5" width="1200" height="600"/><circle cx="300" cy="300" r="200" fill="%239C27B0" opacity="0.3"/><circle cx="900" cy="400" r="150" fill="%237B1FA2" opacity="0.3"/></svg>');
+        }
+
+        .slide-2 {
+            background: linear-gradient(rgba(123, 31, 162, 0.7), rgba(156, 39, 176, 0.7)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23E1BEE7" width="1200" height="600"/><circle cx="600" cy="200" r="180" fill="%239C27B0" opacity="0.3"/><circle cx="200" cy="450" r="120" fill="%23F3E5F5" opacity="0.3"/></svg>');
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .carousel-dot.active {
+            background-color: white;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* ===== SECTIONS COMMUNES ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark-color);
+        }
+
+        /* ===== CATÉGORIES ===== */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--secondary-color), #E1BEE7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .category-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== PRODUITS ===== */
+        .filters {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .filter-group input,
+        .filter-group select {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary-color), #E1BEE7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .product-category {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-rating {
+            color: #ffa500;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-add-cart:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* ===== PANIER ===== */
+        .cart-container {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-item-image {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--secondary-color), #E1BEE7);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            overflow: hidden;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-details h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--border-color);
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .remove-btn {
+            color: #e74c3c;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cart-summary {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .summary-total {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            border-top: 2px solid var(--primary-color);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* ===== CHECKOUT ===== */
+        .checkout-form {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 3rem 5%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .page-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .page-btn:hover,
+        .page-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .product-detail-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--secondary-color), #E1BEE7);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            overflow: hidden;
+        }
+
+        .product-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* ===== PAGE CONTENT ===== */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        .about-content,
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--light-color);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            line-height: 1.8;
+        }
+
+        .about-content h2,
+        .contact-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .product-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            ✨ Livraison gratuite dès 50€ d'achat ✨
+        </div>
+        <nav>
+            <a href="#" class="logo" onclick="showPage('home')">Lady Glam</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home')">Accueil</a></li>
+                <li><a href="#" onclick="showPage('products')">Produits</a></li>
+                <li><a href="#" onclick="showPage('about')">À propos</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="cart-icon" onclick="showPage('cart')">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PAGE ACCUEIL -->
+    <div id="homePage" class="page-content active">
+        <!-- HERO CAROUSEL -->
+        <section class="hero">
+            <div class="carousel" id="carousel">
+                <div class="carousel-slide slide-1">
+                    <div class="hero-content">
+                        <h1>Révélez votre beauté naturelle</h1>
+                        <p>Découvrez notre collection exclusive de soins de luxe</p>
+                        <a href="#" class="btn-primary" onclick="showPage('products')">Découvrir</a>
+                    </div>
+                </div>
+                <div class="carousel-slide slide-2">
+                    <div class="hero-content">
+                        <h1>Nouveauté Printemps 2025</h1>
+                        <p>Une gamme enrichie en actifs naturels pour sublimer votre peau</p>
+                        <a href="#" class="btn-primary" onclick="showPage('products')">Explorer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                <span class="carousel-dot" onclick="goToSlide(1)"></span>
+            </div>
+        </section>
+
+        <!-- CATÉGORIES -->
+        <section class="container">
+            <h2 class="section-title">Nos Catégories</h2>
+            <div class="categories">
+                <div class="category-card" onclick="filterByCategory('Mode & Vêtements')">
+                    <div class="category-image">👗</div>
+                    <div class="category-info">
+                        <h3>Mode & Vêtements</h3>
+                        <p>Robes, voiles, chaussures</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Accessoires & Lifestyle')">
+                    <div class="category-image">👜</div>
+                    <div class="category-info">
+                        <h3>Accessoires & Lifestyle</h3>
+                        <p>Sacs, montres, lunettes</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Soins Visage')">
+                    <div class="category-image">💆‍♀️</div>
+                    <div class="category-info">
+                        <h3>Soins du Visage</h3>
+                        <p>Nettoyants, sérums, crèmes</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Soins Corps')">
+                    <div class="category-image">🧴</div>
+                    <div class="category-info">
+                        <h3>Soins du Corps</h3>
+                        <p>Crèmes, protection solaire</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Soins Capillaires')">
+                    <div class="category-image">🧖‍♀️</div>
+                    <div class="category-info">
+                        <h3>Soins Capillaires</h3>
+                        <p>Shampoings, masques</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Parfumerie')">
+                    <div class="category-image">🌸</div>
+                    <div class="category-info">
+                        <h3>Parfumerie</h3>
+                        <p>Musk, fragrances</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUITS PHARES -->
+        <section class="container">
+            <h2 class="section-title">Nos Produits Phares</h2>
+            <div class="products-grid" id="featuredProducts"></div>
+        </section>
+    </div>
+
+    <!-- PAGE PRODUITS -->
+    <div id="productsPage" class="page-content">
+        <section class="container">
+            <h2 class="section-title">Notre Catalogue</h2>
+
+            <!-- FILTRES -->
+            <div class="filters">
+                <div class="filter-group">
+                    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Rechercher un produit..."
+                        onkeyup="searchProducts()">
+                    <select id="categoryFilter" onchange="filterProducts()">
+                        <option value="">Toutes catégories</option>
+                        <option value="Mode & Vêtements">Mode & Vêtements</option>
+                        <option value="Accessoires & Lifestyle">Accessoires & Lifestyle</option>
+                        <option value="Soins Visage">Soins du Visage</option>
+                        <option value="Soins Corps">Soins du Corps</option>
+                        <option value="Soins Capillaires">Soins Capillaires</option>
+                        <option value="Parfumerie">Parfumerie</option>
+                    </select>
+                    <select id="sortFilter" onchange="sortProducts()">
+                        <option value="default">Trier par</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name">Nom A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- GRILLE PRODUITS -->
+            <div class="products-grid" id="productsGrid"></div>
+
+            <!-- PAGINATION -->
+            <div class="pagination" id="pagination"></div>
+        </section>
+    </div>
+
+    <!-- PAGE PANIER -->
+    <div id="cartPage" class="page-content">
+        <section class="container">
+            <h2 class="section-title">Mon Panier</h2>
+            <div class="cart-container">
+                <div id="cartItems"></div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Sous-total:</span>
+                        <span id="subtotal">0.00€</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Livraison:</span>
+                        <span id="shipping">5.00€</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total:</span>
+                        <span id="total">0.00€</span>
+                    </div>
+                    <button class="btn-primary" onclick="showPage('checkout')"
+                        style="width: 100%; margin-top: 1rem;">Passer la commande</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE CHECKOUT -->
+    <div id="checkoutPage" class="page-content">
+        <section class="container">
+            <h2 class="section-title">Finaliser ma commande</h2>
+            <form class="checkout-form" id="checkoutForm" onsubmit="submitOrder(event)">
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Informations de livraison</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Prénom *</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Nom *</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone *</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Adresse *</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Ville *</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Code postal *</label>
+                        <input type="text" id="postalCode" required>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1.5rem; color: var(--primary-color);">Informations de paiement</h3>
+                <div class="form-group">
+                    <label for="cardNumber">Numéro de carte *</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryDate">Date d'expiration *</label>
+                        <input type="text" id="expiryDate" placeholder="MM/AA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV *</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+
+                <div class="cart-summary" style="margin-top: 2rem;">
+                    <div class="summary-row">
+                        <span>Total à payer:</span>
+                        <span id="checkoutTotal">0.00€</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 2rem; padding: 1.2rem;">
+                    Confirmer et Payer
+                </button>
+            </form>
+        </section>
+    </div>
+
+    <!-- PAGE À PROPOS -->
+    <div id="aboutPage" class="page-content">
+        <section class="container">
+            <h2 class="section-title">À Propos de Lady Glam</h2>
+            <div class="about-content">
+                <h2>Notre Histoire</h2>
+                <p>Fondée en 2018, Lady Glam est née de la passion d'offrir aux femmes une expérience shopping unique
+                    alliant mode élégante, beauté raffinée et accessoires tendance. Notre mission est de révéler le
+                    style et la beauté de chaque femme grâce à une sélection soigneuse de produits de qualité.</p>
+
+                <h2>Nos Valeurs</h2>
+                <p><strong>Qualité & Style :</strong> Nous sélectionnons uniquement les meilleures pièces mode et les
+                    produits beauté les plus efficaces pour garantir votre satisfaction.</p>
+                <p><strong>Diversité :</strong> De la mode aux soins en passant par les accessoires, nous offrons une
+                    gamme complète pour répondre à tous vos besoins quotidiens.</p>
+                <p><strong>Transparence :</strong> Chaque produit est accompagné de descriptions détaillées et
+                    d'informations claires sur sa composition et son utilisation.</p>
+
+                <h2>Notre Expertise</h2>
+                <p>Avec plus de 7 ans d'expérience dans l'univers de la mode et de la beauté, notre équipe sélectionne
+                    pour vous des produits qui allient élégance, confort et efficacité. Chaque article est choisi avec
+                    soin pour vous offrir le meilleur rapport qualité-prix.</p>
+
+                <h2>Pourquoi nous choisir ?</h2>
+                <p>✓ Large sélection mode et beauté<br>
+                    ✓ Livraison rapide et soignée<br>
+                    ✓ Service client à votre écoute 7j/7<br>
+                    ✓ Programme de fidélité avantageux<br>
+                    ✓ Nouveautés régulières</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE CONTACT -->
+    <div id="contactPage" class="page-content">
+        <section class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-content">
+                <p style="text-align: center; margin-bottom: 2rem;">Vous avez une question ? Notre équipe est là pour
+                    vous répondre.</p>
+
+                <form class="checkout-form" onsubmit="submitContact(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Nom complet *</label>
+                            <input type="text" id="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input type="email" id="contactEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Sujet *</label>
+                        <input type="text" id="contactSubject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Envoyer le message</button>
+                </form>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Nos Coordonnées</h3>
+                    <p>📧 Email : contact@ladyglam.com</p>
+                    <p>📞 Téléphone : +33 1 23 45 67 89</p>
+                    <p>📍 Adresse : 15 Avenue des Champs-Élysées, 75008 Paris, France</p>
+                    <p>🕐 Horaires : Lundi - Vendredi : 9h - 18h</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODAL DÉTAIL PRODUIT -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="product-detail" id="productDetail"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Lady Glam</h3>
+                <p>Votre destination mode, beauté et accessoires.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')">Accueil</a></li>
+                    <li><a href="#" onclick="showPage('products')">Produits</a></li>
+                    <li><a href="#" onclick="showPage('about')">À propos</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Politique de retour</a></li>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Inscrivez-vous pour recevoir nos offres exclusives</p>
+                <input type="email" placeholder="Votre email"
+                    style="width: 100%; padding: 0.8rem; margin-top: 1rem; border-radius: 5px; border: none;">
+                <button class="btn-primary" style="margin-top: 1rem; width: 100%;">S'inscrire</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lady Glam. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- 
+        🎯 SCRIPTS EXTERNES 
+        L'ordre est important : on charge d'abord les données, puis la logique qui les utilise.
+    -->
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
